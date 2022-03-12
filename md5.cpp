@@ -88,7 +88,7 @@ static const DWORD httpreq(LPCWSTR linkwithoutslash, LPCWSTR fulllink, const std
                 }
                 else 
                 { 
-                    printf("\nyarrak\n"); 
+                    printf("\nnorack\n"); 
                     return FALSE; 
                     break;
                 }
@@ -184,20 +184,20 @@ const DWORD md5(LPCWSTR filename)
     cbHash = MD5LEN;
     if (CryptGetHashParam(hHash, HP_HASHVAL, rgbHash, &cbHash, 0))
     {
-        CHAR YARRAK;
-        CHAR YARRAK2;
-        const char UPUZUNYARRAK[MAXCHAR] = " ";
+        CHAR adam;
+        CHAR adam2;
+        const char upuzun[MAXCHAR] = " ";
         for (DWORD i = 0; i < cbHash; i++)
         {
-            YARRAK = rgbDigits[rgbHash[i] >> 4];
-            YARRAK2 = rgbDigits[rgbHash[i] & 0xf];
-            sprintf((char*)UPUZUNYARRAK, "%c%c", YARRAK, YARRAK2);
-            std::cout << UPUZUNYARRAK;
+            adam = rgbDigits[rgbHash[i] >> 4];
+            adam2 = rgbDigits[rgbHash[i] & 0xf];
+            sprintf((char*)upuzun, "%c%c", adam, adam2);
+            std::cout << upuzun;
         }
         std::cout << "\n";
-        if (httpreq(L"raw.githubusercontent.com", L"/calomity/md5/main/md5", UPUZUNYARRAK) == TRUE)
+        if (httpreq(L"raw.githubusercontent.com", L"/calomity/md5/main/md5", upuzun) == TRUE)
         {
-            std::cout << "control yapiom bea sus bea!!!";
+            std::cout << "control yapiom!!!";
             return TRUE;
         }
         else
@@ -225,6 +225,6 @@ void main()
     }
     else
     {
-        std::cout << "yarrak girersin got!" << "\n";
+        std::cout << "giremenkardes!" << "\n";
     }
 }
